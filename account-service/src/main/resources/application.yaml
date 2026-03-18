@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: account-service
+  datasource:
+    url: jdbc:mysql://localhost:3316/account_service
+    username: root
+    password: mysql
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+logging:
+  level:
+    org.flywaydb: DEBUG
+
+wallet:
+  url: http://localhost:8081
+  connect-timeout: 2s
+  read-timeout: 5s
