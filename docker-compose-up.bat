@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set services=api-gateway inventory-service order-service product-service
+set services=api-gateway account-service kafka-service ledger-service payment-service wallet-service
 
 cd ..
 for %%s in (%services%) do (

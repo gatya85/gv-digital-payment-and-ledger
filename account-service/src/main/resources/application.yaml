@@ -12,6 +12,14 @@ spring:
     hibernate:
       ddl-auto: none
 
+  Kafka:
+    bootstrap-servers: localhost:9092
+    template:
+      default-topic: account-created
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
 logging:
   level:
     org.flywaydb: DEBUG
