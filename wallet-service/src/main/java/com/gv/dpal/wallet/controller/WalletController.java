@@ -1,13 +1,12 @@
 package com.gv.dpal.wallet.controller;
 
-import com.gv.dpal.wallet.dto.CreateWalletRequest;
-import com.gv.dpal.wallet.dto.CreateWalletResponse;
-import com.gv.dpal.wallet.dto.TopUpWalletRequest;
-import com.gv.dpal.wallet.dto.TopUpWalletResponse;
+import com.gv.dpal.wallet.dto.*;
 import com.gv.dpal.wallet.service.WalletService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/api/wallets")
@@ -26,6 +25,12 @@ public class WalletController {
     @ResponseStatus(HttpStatus.OK)
     public TopUpWalletResponse topUpWallet(@RequestBody TopUpWalletRequest topUpWalletRequest){
         return walletService.topUpWallet(topUpWalletRequest);
+    }
+
+    @GetMapping("/{walletId}")
+    @ResponseStatus(HttpStatus.OK)
+    public GetWalletResponse getWallet(@PathVariable UUID walletId){
+        return walletService.getWallet(walletId);
     }
 
 }

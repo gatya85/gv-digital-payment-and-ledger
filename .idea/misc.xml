@@ -3,7 +3,11 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/account-service" />
+    <file type="web" url="file://$PROJECT_DIR$/api-gateway" />
+    <file type="web" url="file://$PROJECT_DIR$/common-lib" />
+    <file type="web" url="file://$PROJECT_DIR$/fraud-service" />
     <file type="web" url="file://$PROJECT_DIR$/ledger-service" />
+    <file type="web" url="file://$PROJECT_DIR$/notification-service" />
     <file type="web" url="file://$PROJECT_DIR$/payment-service" />
     <file type="web" url="file://$PROJECT_DIR$/wallet-service" />
   </component>

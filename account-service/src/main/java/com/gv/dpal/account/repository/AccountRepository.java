@@ -1,7 +1,7 @@
 package com.gv.dpal.account.repository;
 
-import com.gv.dpal.account.model.Account;
-import com.gv.dpal.account.model.AccountStatus;
+import com.gv.dpal.account.model.account.Account;
+import com.gv.dpal.account.model.account.AccountStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

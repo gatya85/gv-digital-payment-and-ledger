@@ -16,6 +16,12 @@ logging:
   level:
     org.flywaydb: DEBUG
 
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api-docs
+
 wallet:
   url: http://localhost:8081
   connect-timeout: 2s

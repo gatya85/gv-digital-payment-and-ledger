@@ -3,7 +3,16 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/account-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/account-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api-gateway.main.iml" filepath="$PROJECT_DIR$/.idea/modules/api-gateway.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common-lib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common-lib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common-lib.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common-lib.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fraud-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fraud-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/gv-digital-payment-and-ledger.iml" filepath="$PROJECT_DIR$/.idea/gv-digital-payment-and-ledger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ledger-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ledger-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/payment-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wallet-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/wallet-service.main.iml" />
     </modules>
   </component>
 </project>

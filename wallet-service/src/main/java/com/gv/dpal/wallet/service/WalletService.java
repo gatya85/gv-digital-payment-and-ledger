@@ -1,9 +1,6 @@
 package com.gv.dpal.wallet.service;
 
-import com.gv.dpal.wallet.dto.CreateWalletRequest;
-import com.gv.dpal.wallet.dto.CreateWalletResponse;
-import com.gv.dpal.wallet.dto.TopUpWalletRequest;
-import com.gv.dpal.wallet.dto.TopUpWalletResponse;
+import com.gv.dpal.wallet.dto.*;
 import com.gv.dpal.wallet.model.Wallet;
 import com.gv.dpal.wallet.repository.WalletRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -55,6 +53,21 @@ public class WalletService {
                     wallet.getUpdatedAt());
         }else {
             throw new RuntimeException("Wallet not found!");
+        }
+    }
+
+    public GetWalletResponse getWallet(UUID walletId){
+        Optional<Wallet> walletOptional = walletRepository.findById(walletId);
+        if(walletOptional.isPresent()){
+            Wallet wallet = walletOptional.get();
+            return new GetWalletResponse(
+                    wallet.getWalletId(),
+                    wallet.getAccountId(),
+                    wallet.getCurrency(),
+                    wallet.getAvailableBalance(),
+                    wallet.getReservedBalance());
+        }else {
+            throw new RuntimeException("Cannot Find Wallet with walletId:"+walletId.toString());
         }
     }
 
