@@ -11,7 +11,6 @@ public class AccountMapper {
         return switch (accountModelStatus) {
             case ACTIVE -> AccountStatus.ACTIVE;
             case CLOSED -> AccountStatus.CLOSED;
-            default -> throw new IllegalArgumentException("Unknown status: " + accountModelStatus);
         };
     }
 
@@ -22,7 +21,6 @@ public class AccountMapper {
             case GOLD -> AccountType.GOLD;
             case SILVER -> AccountType.SILVER;
             case SAVING -> AccountType.SAVING;
-            default -> throw new IllegalArgumentException("Unknown type: " + accountModelType);
         };
     }
 

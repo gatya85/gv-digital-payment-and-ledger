@@ -7,12 +7,14 @@ import com.gv.dpal.account.dto.account.CreateAccountRequest;
 import com.gv.dpal.account.dto.account.CreateAccountResponse;
 import com.gv.dpal.account.service.AccountService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/accounts")
 @RequiredArgsConstructor
@@ -53,6 +55,7 @@ public class AccountController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<ApiResponse<Boolean>> accountIsValid(@PathVariable String accountId){
         boolean response = accountService.isActive(UUID.fromString(accountId));
+        log.info("accountId: {}", accountId);
         return ResponseEntity.ok(
                 ApiResponse.<Boolean>builder()
                         .status(ApiResponseStatus.SUCCESS)

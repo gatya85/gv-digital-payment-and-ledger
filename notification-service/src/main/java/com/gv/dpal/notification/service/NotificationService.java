@@ -3,7 +3,10 @@ package com.gv.dpal.notification.service;
 import com.gv.dpal.account.event.AccountCreatedEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.kafka.annotation.BackOff;
+import org.springframework.kafka.annotation.DltHandler;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.annotation.RetryableTopic;
 import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -17,6 +20,7 @@ public class NotificationService {
 
     private final JavaMailSender javaMailSender;
 
+    @RetryableTopic(attempts = "4", backOff = @BackOff(delay = 1000, multiplier = 2, maxDelay = 8000))
     @KafkaListener(topics = "account-created")
     public void listenForAccountCreated(AccountCreatedEvent accountCreatedEvent){
         log.info("Got message from account-created topic {}", accountCreatedEvent);
@@ -49,4 +53,10 @@ public class NotificationService {
             throw new RuntimeException("Exception occurred when sending mail", e);
         }
     }
+
+    @DltHandler
+    public void listenForAccountCreatedDLT(AccountCreatedEvent accountCreatedEvent){
+
+    }
+
 }
